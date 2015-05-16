@@ -50,13 +50,17 @@ AdminDashboard =
 
 
 AdminDashboard.schemas.newUser = new SimpleSchema
-	email: 
+	username:
 		type: String
-		label: "Email address"
+		label: "Username"
+	email:
+		type: String
+		label: "Email",
+		optional: true
 	chooseOwnPassword:
 		type: Boolean
 		label: 'Let this user choose their own password with an email'
-		defaultValue: true
+		defaultValue: false
 	password:
 		type: String
 		label: 'Password'
@@ -64,7 +68,7 @@ AdminDashboard.schemas.newUser = new SimpleSchema
 	sendPassword:
 		type: Boolean
 		label: 'Send this user their password by email'
-		optional: true
+		optional: false
 
 AdminDashboard.schemas.sendResetPasswordEmail = new SimpleSchema
 	_id:

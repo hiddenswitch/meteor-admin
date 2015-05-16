@@ -1,18 +1,21 @@
 Package.describe({
-  name: "yogiben:admin",
+  name: "hiddenswitch:battleplans-yogiben-admin",
   summary: "A complete admin dashboard solution",
-  version: "1.1.1",
-  git: "https://github.com/yogiben/meteor-admin"
+  version: "1.1.1_1",
+  git: "https://github.com/hiddenswitch/meteor-admin"
 });
 
 Package.on_use(function(api){
 
-  both = ['client','server']
+  var both = ['client','server'];
 
   api.versionsFrom('METEOR@1.0');
 
   api.use(
-    ['iron:router@1.0.7',
+    ['ui',
+    'templating',
+    'twbs:bootstrap',
+    'iron:router',
     'coffeescript',
     'underscore',
     'aldeed:collection2@2.3.3',
@@ -27,9 +30,9 @@ Package.on_use(function(api){
     ],
     both);
 
-  api.use(['less','session','jquery','templating'],'client')
+  api.use(['less','session','jquery','templating'],'client');
 
-  api.use(['email'],'server')
+  api.use(['email'],'server');
 
   api.add_files([
     'lib/both/AdminDashboard.coffee',
@@ -52,7 +55,7 @@ Package.on_use(function(api){
     'lib/client/js/templates.coffee',
     'lib/client/js/events.coffee',
     'lib/client/js/slim_scroll.js',
-    'lib/client/js/autoForm.coffee',
+    'lib/client/js/autoForm.coffee'
     ], 'client');
 
   api.add_files([
@@ -62,6 +65,6 @@ Package.on_use(function(api){
 
 
 
-  api.export('AdminDashboard',both)
+  api.export('AdminDashboard',both);
 
 });

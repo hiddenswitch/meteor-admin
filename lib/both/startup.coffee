@@ -55,16 +55,13 @@ AdminTables.Users = new Tabular.Table
 			data: 'emails'
 			title: 'Email'
 			render: (value) ->
-				value[0].address
+				value?[0]?.address?
 			searchable: true
 		}
 		{
-			data: 'emails'
-			title: 'Mail'
-			# TODO: use `tmpl`
-			createdCell: (node, cellData, rowData) ->
-				$(node).html(Blaze.toHTMLWithData Template.adminUsersMailBtn, {emails: cellData}, node)
-			width: '40px'
+			data: 'username'
+			title: 'Username'
+			searchable: true
 		}
 		{ data: 'createdAt', title: 'Joined' }
 	], adminEditDelButtons
