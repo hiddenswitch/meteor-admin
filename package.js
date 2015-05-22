@@ -1,7 +1,7 @@
 Package.describe({
   name: "hiddenswitch:battleplans-yogiben-admin",
   summary: "A complete admin dashboard solution",
-  version: "1.1.1_1",
+  version: "1.1.1_2",
   git: "https://github.com/hiddenswitch/meteor-admin"
 });
 
